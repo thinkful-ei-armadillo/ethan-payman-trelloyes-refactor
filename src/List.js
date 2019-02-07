@@ -3,10 +3,6 @@ import Card from './Card';
 import './List.css';
 
 export default class List extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <section className="List">

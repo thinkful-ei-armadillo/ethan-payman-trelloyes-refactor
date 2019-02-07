@@ -31,8 +31,6 @@ class App extends Component {
     super(props);
     // console.log(STORE);
     this.state = STORE;
-    this.deleteCard = this.deleteCard.bind(this);
-    this.addRandomCard = this.addRandomCard.bind(this);
   }
 
   deleteCard = (cardID, listID) => {
@@ -72,7 +70,6 @@ class App extends Component {
   };
 
   render() {
-    debugger;
     return (
       <main className="App">
         <header className="App-header">
