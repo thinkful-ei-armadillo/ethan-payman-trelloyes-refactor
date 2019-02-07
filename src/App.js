@@ -15,8 +15,8 @@ class App extends Component {
     console.log(`Delete card ${cardID} from all lists`);
   }
 
-  addRandomCard = () => {
-    console.log(`Add random card to list XXX`);
+  addRandomCard = (listID) => {
+    console.log(`Add random card to list ${listID}`);
   }
 
   render() {
@@ -28,6 +28,7 @@ class App extends Component {
         <div className='App-list'>
           {this.state.lists.map(list => (
             <List
+              id={list.id}
               key={list.id}
               header={list.header}
               cards={list.cardIds.map(id => this.state.allCards[id])}
