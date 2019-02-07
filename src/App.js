@@ -11,27 +11,27 @@ function omit(obj, keyToOmit) {
   );
 }
 
-const newRandomCard = () => {
-  const id =
-    Math.random()
-      .toString(36)
-      .substring(2, 4) +
-    Math.random()
-      .toString(36)
-      .substring(2, 4);
-  return {
-    id,
-    title: `Random Card ${id}`,
-    content: 'lorem ipsum'
-  };
-};
-
 class App extends Component {
   constructor(props) {
     super(props);
     // console.log(STORE);
     this.state = STORE;
   }
+
+  newRandomCard = () => {
+    const id =
+      Math.random()
+        .toString(36)
+        .substring(2, 4) +
+      Math.random()
+        .toString(36)
+        .substring(2, 4);
+    return {
+      id,
+      title: `Random Card ${id}`,
+      content: 'lorem ipsum'
+    };
+  };
 
   deleteCard = (cardID, listID) => {
     this.setState({
@@ -51,7 +51,7 @@ class App extends Component {
   };
 
   addRandomCard = id => {
-    const card = newRandomCard();
+    const card = this.newRandomCard();
 
     const list = this.state.lists.find(element => element.id === id);
     const newArr = [...list.cardIds, card.id];
